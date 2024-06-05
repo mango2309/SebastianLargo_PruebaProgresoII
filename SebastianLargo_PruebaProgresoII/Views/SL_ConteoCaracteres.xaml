@@ -3,10 +3,53 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SebastianLargo_PruebaProgresoII.Views.SL_ConteoCaracteres"
              Title="SL_ConteoCaracteres">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Content>
+        <Grid Padding="20" RowSpacing="10" ColumnSpacing="10">
+            <!-- Define rows and columns -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Entry for user input -->
+            <Entry x:Name="InputEntry" Placeholder="Ingrese una cadena de caracteres" Grid.Row="0" Grid.ColumnSpan="2"/>
+
+            <!-- Button to calculate statistics -->
+            <Button Text="Calcular" Clicked="OnCalculateClicked" Grid.Row="1" Grid.Column="0"/>
+
+            <!-- Button to clear the input and results -->
+            <Button Text="Limpiar" Clicked="OnClearClicked" Grid.Row="1" Grid.Column="1"/>
+
+            <!-- Labels to display results -->
+            <Label Text="Total de caracteres:" Grid.Row="2" Grid.Column="0"/>
+            <Label x:Name="TotalCharactersLabel" Grid.Row="2" Grid.Column="1"/>
+
+            <Label Text="Número de letras:" Grid.Row="3" Grid.Column="0"/>
+            <Label x:Name="LetterCountLabel" Grid.Row="3" Grid.Column="1"/>
+
+            <Label Text="Número de números:" Grid.Row="4" Grid.Column="0"/>
+            <Label x:Name="NumberCountLabel" Grid.Row="4" Grid.Column="1"/>
+
+            <Label Text="Número de vocales:" Grid.Row="5" Grid.Column="0"/>
+            <Label x:Name="VowelCountLabel" Grid.Row="5" Grid.Column="1"/>
+
+            <Label Text="Número de mayúsculas:" Grid.Row="6" Grid.Column="0"/>
+            <Label x:Name="UppercaseCountLabel" Grid.Row="6" Grid.Column="1"/>
+
+            <Label Text="Número de minúsculas:" Grid.Row="7" Grid.Column="0"/>
+            <Label x:Name="LowercaseCountLabel" Grid.Row="7" Grid.Column="1"/>
+
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>
